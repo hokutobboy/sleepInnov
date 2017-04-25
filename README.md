@@ -15,6 +15,22 @@ from report r
 left join measurement m on m.report_id = r.id
 where r.device_id = 57
 and r.created_at LIKE '2017-02-23%'
-group by r.id
+group by r.id;
 ```
+*
+**TODO :** Par manque de temps, je ne ramène pas les moyennes das valeurs [a, ..., g] pondérées par la durée de chaque mesure.
+Pour être tout à fait honnête, j'évite tant que possible d'effecteur ce genre de calculs directement en SQL et préfère généralement opérer côté applicatif, si l'impact en termes de ressources n'est pas trop important
+**Notes :** pour cette requête, je pars du principe que l'ID du DM est connu (#57 dans cet exemple), ainsi que la date (envoyés au controlleur via la requête HTTP, par exemple)*
+
 ### 4 : Requête SQL pour la page "Journée d'un appareil"
+```sql
+select m.id as measurementId,
+    m.a, m.b, m.c, m.d, m.e, m.f, m.g, 
+    (CASE WHEN m.duration IS NOT NULL 
+       THEN m.duration
+       ELSE r.default_duration END) AS duration
+from report r
+left join measurement m on m.report_id = r.id
+where r.id = 1
+group by m.id
+```
