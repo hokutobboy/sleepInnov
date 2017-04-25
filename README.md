@@ -40,5 +40,6 @@ group by m.id;
 
 ### 5 : Code PHP pour le tableau de la page "Rapport d'un appareil"
 - Voir action adminReportAction($id) du controleur "[ApplitestController](https://github.com/hokutobboy/sleepInnov/blob/master/Application/Controller/ApplitestController.php#L15)"
-- sdf
+- Les tables "Device", "Report" et "Measurement" ont été mappées avec Doctrine (v 2.5.6)
+- Je pars du principe que comme l'utilisateur vient de cliquer sur un lien (de la page "Journée d'un appareil") correspondant à un et un seul rapport (on affiche son heure de création, mais on connait son id au moment de l'affichage). L'URL appelée est donc de type "http://mon.domaine.com/applitest/report/1" (La valeur "1" correspondant à l'id du rapport sur lequel l'utilisateur vient de cliquer
 
