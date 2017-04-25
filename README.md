@@ -20,8 +20,8 @@ group by r.id;
 
 **Notes :** *pour cette requête, je pars du principe que l'ID du DM est connu (#57 dans cet exemple), ainsi que la date (envoyés au controlleur via la requête HTTP, par exemple)*
 
-**TODO :** *Par manque de temps, je ne ramène pas les moyennes des valeurs [a, ..., g] pondérées par la durée de chaque mesure.
-Pour être tout à fait honnête, j'évite tant que possible d'effecteur ce genre de calculs directement en SQL et préfère généralement opérer côté applicatif, si l'impact en termes de ressources n'est pas trop important*
+**TODO :** *Par manque de temps (et aussi d'expertise), je ne ramène pas les moyennes des valeurs [a, ..., g] pondérées par la durée de chaque mesure.
+Pour être tout à fait honnête, j'évite tant que possible d'effecteur ce genre de calculs directement en SQL et préfère généralement opérer côté applicatif, si l'impact en termes de ressources n'est pas trop important.*
 
 ### 4 : Requête SQL pour la page "Journée d'un appareil"
 ```sql
