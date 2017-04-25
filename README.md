@@ -33,8 +33,12 @@ select m.id as measurementId,
 from report r
 left join measurement m on m.report_id = r.id
 where r.id = 1
-group by m.id
+group by m.id;
 ```
 
-**Notes :** *Pour cette requête je pars du principe que l'ID du rapport est connu (#1 dans cet exemple). Ces paramètres peuvent être passés directement dans l'en-tête de la requête HTTP (GET ou POST)*
-*On pourrait, bien entendu, filter sur le l'id du DM et la date/heure de création du rapport, en remplaçant "r.id = 1" par "where r.device_id = 57 and r.created_at = '2017-02-23 23:07:18'"*
+**Notes :** *Pour cette requête je pars du principe que l'ID du rapport est connu (#1 dans cet exemple). Ces paramètres peuvent être passés directement dans l'en-tête de la requête HTTP (GET ou POST). On pourrait, bien entendu, filter sur le l'id du DM et la date/heure de création du rapport, en remplaçant "r.id = 1" par "where r.device_id = 57 and r.created_at = '2017-02-23 23:07:18'"*
+
+### 5 : Code PHP pour le tableau de la page "Rapport d'un appareil"
+- Voir action adminReportAction($id) du controleur "ApplitestController"[sleepInnov/Application/Controller/ApplitestController.php](https://github.com/hokutobboy/sleepInnov/blob/master/Application/Controller/ApplitestController.php#L15)
+- sdf
+
